@@ -1,0 +1,34 @@
+/* CSS styles */
+h1 {
+font-family: Impact, sans-serif;
+color: #CE5937;
+white-space:nowrap;
+
+}
+
+body{
+    padding: 200px;
+}
+
+.outer-container{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+
+.container{
+  display:grid;
+  grid-template-columns:repeat(3,100px);
+  grid-template-rows:repeat(3,100px);
+  justify-content: center;
+  
+}
+.cell{
+  //border:0.01rem solid black;
+  width:75px;
+  height:75px;
+  padding:10px;
+  border-radius:10px;
+  background-color:#2596be;
+}
