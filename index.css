@@ -8,6 +8,7 @@ white-space:nowrap;
 
 body{
     padding: 200px;
+    overflow: hidden;
 }
 
 .outer-container{
