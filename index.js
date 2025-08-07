@@ -4,6 +4,7 @@ let count;
 let cellNumber;
 let patterensList = [];
 let targetCell;
+let repNum;
 
 
 document.addEventListener('DOMContentLoaded',(event)=>{
@@ -18,14 +19,6 @@ document.addEventListener('DOMContentLoaded',(event)=>{
     });
     
 
-    document.querySelectorAll('.cell').forEach((cell)=>{
-	cell.addEventListener('click',()=>{
-	    console.log('cell',cell);
-
-	    cellMatch(cell);
-	    
-	});
-    });
     
     
 });
@@ -39,6 +32,19 @@ function checkForWin(){
     }
 }
 
+function activateCells(){
+     document.querySelectorAll('.cell').forEach((cell)=>{
+	cell.addEventListener('click',()=>{
+	    console.log('cell',cell);
+
+	    cellMatch(cell);
+	    
+	});
+    });
+   
+}
+
+
 function startGame(){
 
     patterensList = [];
@@ -48,6 +54,7 @@ function startGame(){
     });
 
     generatePatterance();
+    activateCells();
 }
 
 
@@ -73,7 +80,8 @@ function flipCell(){
 
 function generatePatterance(){
 
-    
+
+    repNum = document.querySelector('.length').value;
     var randomNumber = Math.floor(Math.random() * 10);
     
     if(randomNumber !== 0 && randomNumber !== cellNumber){
@@ -90,7 +98,7 @@ function generatePatterance(){
     }
 
     
-    if(count <=4){
+    if(count <=repNum){
 	
 	setTimeout(generatePatterance,1000);
 	count ++;
